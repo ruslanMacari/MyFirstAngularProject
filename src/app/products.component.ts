@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ProductComponent} from './product/product.component';
+import {AbstractControl, Form} from '@angular/forms';
 
 @Component({
   selector: 'app-products',
@@ -17,8 +18,10 @@ export class ProductsComponent {
     }, 3000);
   }
 
-  onAddProduct(): void {
-    this.products.push(this.productName);
+  onAddProduct(form: AbstractControl): void {
+    if (form.valid) {
+      this.products.push(form.value.productName);
+    }
   }
 
   onRemoveProduct(productName: string): void {
