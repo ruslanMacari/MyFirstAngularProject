@@ -1,4 +1,3 @@
-import {fromArray} from 'rxjs/internal/observable/fromArray';
 import {Subject} from 'rxjs';
 
 export class ProductsService {
